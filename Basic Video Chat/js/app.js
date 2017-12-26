@@ -47,23 +47,7 @@ function initializeSession() {
   // Connect to the session
   session.connect(token, function(error) {
     // If the connection is successful, initialize a publisher and publish to the session
-    if (!error) {
-      var publisherOptions = {
-        insertMode: 'append',
-        width: '100%',
-        height: '100%'
-      };
-      var publisher = OT.initPublisher('publisher', publisherOptions, function(error) {
-        if (error) {
-          console.log('There was an error initializing the publisher: ', error.name, error.message);
-          return;
-        }
-        session.publish(publisher, function(error) {
-          if (error) {
-            console.log('There was an error publishing: ', error.name, error.message);
-          }
-        });
-      });
+    
     } else {
       console.log('There was an error connecting to the session: ', error.name, error.message);
     }
