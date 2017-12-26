@@ -46,9 +46,7 @@ function initializeSession() {
 
   // Connect to the session
   session.connect(token, function(error) {
-    // If the connection is successful, initialize a publisher and publish to the session
-    
-    } else {
+    if(error) {
       console.log('There was an error connecting to the session: ', error.name, error.message);
     }
   });
